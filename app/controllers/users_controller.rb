@@ -1,4 +1,5 @@
 class UsersController < ApplicationController
+  protect_from_forgery with: :null_session
   before_action :set_user, only: %i[ show edit update destroy ]
 
   # GET /users or /users.json
@@ -60,7 +61,7 @@ class UsersController < ApplicationController
   private
     # Use callbacks to share common setup or constraints between actions.
     def set_user
-      @user = User.find(params[:id])
+      @user = User.includes(:followers, :followings).find(params[:id])
     end
 
     # Only allow a list of trusted parameters through.

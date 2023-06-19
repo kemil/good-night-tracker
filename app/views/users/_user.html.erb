@@ -2,6 +2,17 @@
   <p>
     <strong>Name:</strong>
     <%= user.name %>
+    <br/>
+    <br/>
+    <strong>Followers</strong>
+    <% user.followers.each do |follower| %>
+      <%= follower.name %><br/>
+    <% end %>
+    <br/>
+    <strong>Following</strong>
+    <% user.followings.each do |following| %>
+      <%= following.name %><br/>
+    <% end %>
   </p>
 
 </div>

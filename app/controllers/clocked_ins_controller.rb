@@ -1,5 +1,6 @@
 class ClockedInsController < ApplicationController
   before_action :set_clocked_in, only: %i[ show edit update destroy ]
+  protect_from_forgery with: :null_session
 
   # GET /clocked_ins or /clocked_ins.json
   def index
