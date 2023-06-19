@@ -1,0 +1,14 @@
+<p style="color: green"><%= notice %></p>
+
+<h1>Clocked ins</h1>
+
+<div id="clocked_ins">
+  <% @clocked_ins.each do |clocked_in| %>
+    <%= render clocked_in %>
+    <p>
+      <%= link_to "Show this clocked in", clocked_in %>
+    </p>
+  <% end %>
+</div>
+
+<%= link_to "New clocked in", new_clocked_in_path %>

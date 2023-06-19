@@ -1,0 +1,10 @@
+<p style="color: green"><%= notice %></p>
+
+<%= render @clocked_in %>
+
+<div>
+  <%= link_to "Edit this clocked in", edit_clocked_in_path(@clocked_in) %> |
+  <%= link_to "Back to clocked ins", clocked_ins_path %>
+
+  <%= button_to "Destroy this clocked in", @clocked_in, method: :delete %>
+</div>

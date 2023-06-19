@@ -1,0 +1,2 @@
+class ClockedIn < ApplicationRecord
+end
