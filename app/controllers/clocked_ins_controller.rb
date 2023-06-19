@@ -5,7 +5,7 @@ class ClockedInsController < ApplicationController
 
   # GET /clocked_ins or /clocked_ins.json
   def index
-    @clocked_ins = ClockedIn.all
+    @clocked_ins = ClockedIn.from_previous_week
   end
 
   # GET /clocked_ins/1 or /clocked_ins/1.json

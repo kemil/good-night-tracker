@@ -2,6 +2,7 @@ class ClockedIn < ApplicationRecord
   include ActionView::Helpers::DateHelper
   before_create :add_start_date
   before_update :set_end_date
+  scope :from_previous_week, -> { where("start_date >= ?", 7.days.ago ).order(Arel.sql("(SELECT AGE(start_date, end_date) ASC)")) }
 
   belongs_to :user
 
